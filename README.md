@@ -12,8 +12,8 @@
 ## Technologies
 * Java <a href="https://jdk.java.net/java-se-ri/14">14</a> or <a href="https://jdk.java.net/15/">15</a>
 * Maven Dependencies:
-  * <a href="https://github.com/google/gson">Google Gson</a>
-  * <a href="https://junit.org/junit5/">JUnit 5</a>
+  * <a href="https://github.com/google/gson">Google Gson</a> version 2.8.6
+  * <a href="https://junit.org/junit5/">JUnit 5</a> version 5.3.1
     
   
     
