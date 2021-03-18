@@ -9,7 +9,7 @@
 This project started out as classwork for a data structures class in college
 
 ## Technologies
-* <a href="https://jdk.java.net/java-se-ri/14">Java 14</a>
+* Java <a href="https://jdk.java.net/java-se-ri/14">14</a> or <a href="https://jdk.java.net/15/">15</a>
 * Maven Dependencies:
   * <a href="https://junit.org/junit5/">JUnit 5</a>
   * <a href="https://github.com/google/gson">Google Gson</a>
