@@ -6,7 +6,7 @@
 * [Technologies](#technologies)
 
 ## General info
-text
+This project started out as classwork for a data structures class in college
 
 ## Technologies
 * <a href="https://jdk.java.net/java-se-ri/14">Java 14</a>
