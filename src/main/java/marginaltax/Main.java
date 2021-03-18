@@ -10,6 +10,7 @@ public class Main {
     private static float salary;
     private static String filingStatus;
 
+    
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
