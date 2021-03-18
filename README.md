@@ -18,7 +18,7 @@
   
     
 ## Inspiration
-This project started out as classwork for a data structures class in college
+This project is based on classwork from a data structures course
 
 
 
