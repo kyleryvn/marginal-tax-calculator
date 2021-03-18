@@ -3,7 +3,8 @@
 
 ## Table of contents
 * [General info](#general-info)
-* [Technologies](#technologies)
+* [Technologies](#technologies) 
+* [Setup](#setup)
 * [Inspiration](#inspiration)
 
 ## General info
@@ -14,8 +15,9 @@
 * Maven Dependencies:
   * <a href="https://github.com/google/gson">Google Gson</a> version 2.8.6
   * <a href="https://junit.org/junit5/">JUnit 5</a> version 5.3.1
-    
   
+## Setup
+* Add .jar file to your projects library
     
 ## Inspiration
 This project is based on classwork from a data structures course
