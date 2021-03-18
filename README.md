@@ -10,6 +10,7 @@ text
 
 ## Technologies
 * <a href="https://jdk.java.net/java-se-ri/14">Java 14</a>
+* <a href="https://maven.apache.org/index.html">Maven</a>
 
 
 
