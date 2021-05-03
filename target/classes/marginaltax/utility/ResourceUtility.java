@@ -1,4 +1,5 @@
 package marginaltax.utility;
+
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,20 +12,20 @@ import java.util.stream.Stream;
 
 public class ResourceUtility {
 
-    public static List<String> get(String fileName){
+    public static List<String> get(String fileName) {
         return get(fileName, 0);
     }
 
-    public static List<String> get(String fileName, int skip)    {
-        return get(fileName, skip, e -> e, p -> true );
+    public static List<String> get(String fileName, int skip) {
+        return get(fileName, skip, e -> e, p -> true);
     }
 
-    public static <T> List<T> get(String fileName, int skip, Function<String,T> conversion) {
+    public static <T> List<T> get(String fileName, int skip, Function<String, T> conversion) {
         return get(fileName, skip, conversion, p -> true);
     }
 
     public static <T> List<T> get(String fileName, int skip
-            , Function<String,T> conversion, Predicate<T> predicate) {
+            , Function<String, T> conversion, Predicate<T> predicate) {
 
         // ResourceUtility classloader, try-catch with resources
         try {
@@ -42,7 +43,7 @@ public class ResourceUtility {
                         .filter(predicate)
                         .collect(Collectors.toList());
 
-            } catch (Exception ex){
+            } catch (Exception ex) {
                 ex.printStackTrace();
             }
         } catch (NullPointerException ex) {
