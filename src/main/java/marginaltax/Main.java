@@ -1,56 +1,64 @@
 package marginaltax;
+
 import marginaltax.service.MarginalTaxService;
 import marginaltax.utility.FormatUtility;
+
 import java.util.Scanner;
 
 public class Main {
-    private static final String numberError = "ERROR: A number must be entered";
-    private static final String filingError = "ERROR: Filing status must be either \"S\" | \"MFJ\" | \"MFS\" | \"HH\"";
-    private static boolean isValid = false;
-    private static float salary;
-    private static String filingStatus;
+    // Error message constants
+    private static final String NUMBER_ERROR = "ERROR: A number must be entered";
+    private static final String NEGATIVE_NUMBER_ERROR = "ERROR: Must be a positive number";
+    private static final String FILING_ERROR = "ERROR: Filing status must be either \"S\"/\"MFJ\"/\"MFS\"/\"HH\"";
 
+    // Program variables
+    private static boolean isValid = false;
+    private static float fedSalary;
+    private static String fedFilingStatus;
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
         // Input validation for filing status, checks that user enters "S/MFJ/HH"
+        System.out.println("Federal Income Tax Calculator");
         System.out.println("(S) Single\n(MFJ) Married Filing Jointly\n(MFS) Married Filing Separately\n(HH) Head of Household");
         do {
             System.out.print("Enter filing status (S/MFJ/MFS/HH) : ");
             try {
-                filingStatus = input.nextLine();
-                if (!(filingStatus.equalsIgnoreCase("S") || filingStatus.equalsIgnoreCase("MFJ") ||
-                        filingStatus.equalsIgnoreCase("MFS") || filingStatus.equalsIgnoreCase("HH")))
-                    System.out.println(filingError);
+                fedFilingStatus = input.nextLine();
+                if (!(fedFilingStatus.equalsIgnoreCase("S") || fedFilingStatus.equalsIgnoreCase("MFJ") ||
+                        fedFilingStatus.equalsIgnoreCase("MFS") || fedFilingStatus.equalsIgnoreCase("HH")))
+                    System.out.println(FILING_ERROR);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        } while (!isValid(filingStatus));
+        } while (!isValid(fedFilingStatus));
 
-        // Input validation for salary, checks user input for type float
+        // Input validation for fedSalary, checks user input for type float and fedSalary >= 0
         do {
-            System.out.print("Enter gross annual salary : ");
+            System.out.print("Enter taxable federal income : ");
             try {
-                salary = Float.parseFloat(input.nextLine());
-                isValid = true;
+                if (fedSalary >=0) {
+                    fedSalary = Float.parseFloat(input.nextLine());
+                    isValid = true;
+                }
             } catch (NumberFormatException e) {
-                System.out.println(numberError);
+                System.out.println(NUMBER_ERROR);
             }
         } while (!isValid);
 
-        // Convert user-inputted salary to type double for formatting
-        double convertedSalary = Double.parseDouble(Float.toString(salary));
+        // Convert user-inputted fedSalary to type double for formatting
+        double convertedSalary = Double.parseDouble(Float.toString(fedSalary));
 
         // Calculate taxes due and convert to type double for formatting
-        double taxesDue = Double.parseDouble(Float.toString(MarginalTaxService.getTaxPaid(filingStatus, salary)));
+        double taxesDue = Double.parseDouble(Float.toString(MarginalTaxService.getTaxPaid(fedFilingStatus, fedSalary)));
 
-        // Format user-inputted filing status
-        filingStatus = convertFilingStatus(filingStatus);
+        // Format user-input filing status
+        fedFilingStatus = convertFilingStatus(fedFilingStatus);
 
         // Print results
-        System.out.println("\nResults:\nGross Annual Salary : " + FormatUtility.customFormat("$###,###.###", convertedSalary) +
-                "\nFiled As : " + filingStatus + "\nTaxes Due : " + FormatUtility.customFormat("$###,###.###", taxesDue));
+        System.out.println("\nResults:\nGross Annual Salary : " + FormatUtility.customFormat("$###,###,###.00", convertedSalary) +
+                "\nFiled As : " + fedFilingStatus + "\nTaxes Due : " + FormatUtility.customFormat("$###,###,###.00", taxesDue));
     }
 
     private static boolean isValid(String input) {
@@ -66,14 +74,14 @@ public class Main {
             return false;
     }
 
-    private static String convertFilingStatus(String filingStatus) {
-        if (filingStatus.equalsIgnoreCase("S"))
+    private static String convertFilingStatus(String fedFilingStatus) {
+        if (fedFilingStatus.equalsIgnoreCase("S"))
             return "Single";
-        else if (filingStatus.equalsIgnoreCase("MFJ"))
+        else if (fedFilingStatus.equalsIgnoreCase("MFJ"))
             return "Married Filing Jointly";
-        else if (filingStatus.equalsIgnoreCase("MFS"))
+        else if (fedFilingStatus.equalsIgnoreCase("MFS"))
             return "Married Filing Separately";
-        else if (filingStatus.equalsIgnoreCase("HH"))
+        else if (fedFilingStatus.equalsIgnoreCase("HH"))
             return "Head of Household";
         else
             return null;
