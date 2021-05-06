@@ -5,6 +5,8 @@ import marginaltax.utility.FormatUtility;
 
 import java.util.Scanner;
 
+import static marginaltax.utility.FormatUtility.*;
+
 public class Main {
     // Error message constants
     private static final String NUMBER_ERROR = "ERROR: A number must be entered";
@@ -48,7 +50,7 @@ public class Main {
         } while (!isValid);
 
         // Convert user-inputted fedSalary to type double for formatting
-        double convertedSalary = Double.parseDouble(Float.toString(fedSalary));
+        double convertedSalary = convertSalary(fedSalary);
 
         // Calculate taxes due and convert to type double for formatting
         double taxesDue = Double.parseDouble(Float.toString(MarginalTaxService.getTaxPaid(fedFilingStatus, fedSalary)));
@@ -72,18 +74,5 @@ public class Main {
             return true;
         else
             return false;
-    }
-
-    private static String convertFilingStatus(String fedFilingStatus) {
-        if (fedFilingStatus.equalsIgnoreCase("S"))
-            return "Single";
-        else if (fedFilingStatus.equalsIgnoreCase("MFJ"))
-            return "Married Filing Jointly";
-        else if (fedFilingStatus.equalsIgnoreCase("MFS"))
-            return "Married Filing Separately";
-        else if (fedFilingStatus.equalsIgnoreCase("HH"))
-            return "Head of Household";
-        else
-            return null;
     }
 }

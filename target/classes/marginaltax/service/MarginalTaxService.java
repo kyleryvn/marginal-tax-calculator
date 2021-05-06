@@ -2,7 +2,6 @@ package marginaltax.service;
 
 import com.google.gson.Gson;
 import marginaltax.model.FederalTaxRule;
-import marginaltax.utility.FormatUtility;
 import marginaltax.utility.ResourceUtility;
 
 import java.util.List;
@@ -13,7 +12,6 @@ public class MarginalTaxService {
     private static final List<FederalTaxRule> fedTaxRules;
 
     static {
-        // Gson needs a constructor for the class, otherwise will return null
         Gson gson = new Gson();
         Function<String, FederalTaxRule> convert = json -> gson.fromJson(json, FederalTaxRule.class);
         fedTaxRules = ResourceUtility.get("fedTaxRules.txt", 0, convert);
