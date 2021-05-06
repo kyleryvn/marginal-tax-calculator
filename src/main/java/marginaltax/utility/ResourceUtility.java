@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -30,7 +31,7 @@ public class ResourceUtility {
         // ResourceUtility classloader, try-catch with resources
         try {
             ClassLoader classLoader = ResourceUtility.class.getClassLoader();
-            File file = new File(classLoader.getResource(fileName).getFile());
+            File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());
             System.out.println("\nFile \"" + fileName + "\" found : " + file.exists());
 
             Path path = file.toPath();
