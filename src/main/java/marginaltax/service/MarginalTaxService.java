@@ -2,7 +2,6 @@ package marginaltax.service;
 
 import com.google.gson.Gson;
 import marginaltax.model.FederalTaxRule;
-import marginaltax.utility.FormatUtility;
 import marginaltax.utility.ResourceUtility;
 
 import java.util.List;
