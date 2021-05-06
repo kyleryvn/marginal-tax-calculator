@@ -10,6 +10,8 @@ Calculates tax due based on filing status and gross income
 * [Inspiration](#inspiration)
 
 ## General info
+Discovered error caused by using IntelliJ IDEA compiler with jdk set to 14.
+Changed language settings to 16 and no issues.
 
 ## Technologies
 
