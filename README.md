@@ -13,6 +13,8 @@ Calculates tax due based on filing status and gross income
 Discovered error caused by using IntelliJ IDEA compiler with jdk set to 14.
 Changed language settings to 16 and no issues.
 
+UPDATE: Ensure IDE supports Java 16 and the record feature.
+
 ## Technologies
 
 * Java <a href="https://jdk.java.net/java-se-ri/14">14</a> or <a href="https://jdk.java.net/15/">15</a>
