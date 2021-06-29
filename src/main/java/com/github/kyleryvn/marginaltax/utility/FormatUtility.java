@@ -16,21 +16,5 @@ public class FormatUtility {
         DecimalFormat myFormatter = new DecimalFormat(pattern);
         return myFormatter.format(value);
     }
-
-    public static double convertSalary(float number) {
-        return Double.parseDouble(Float.toString(number));
-    }
-
-    public static String convertFilingStatus(String fedFilingStatus) {
-        if (fedFilingStatus.equalsIgnoreCase("S"))
-            return "Single";
-        else if (fedFilingStatus.equalsIgnoreCase("MFJ"))
-            return "Married Filing Jointly";
-        else if (fedFilingStatus.equalsIgnoreCase("MFS"))
-            return "Married Filing Separately";
-        else if (fedFilingStatus.equalsIgnoreCase("HH"))
-            return "Head of Household";
-        else
-            return null;
-    }
+    
 }
