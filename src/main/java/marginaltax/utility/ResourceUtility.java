@@ -11,28 +11,29 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+@Deprecated
 public class ResourceUtility {
 
-    public static List<String> get(String fileName) {
-        return get(fileName, 0);
+    public static List<String> get(String filename) {
+        return get(filename, 0);
     }
 
-    public static List<String> get(String fileName, int skip) {
-        return get(fileName, skip, e -> e, p -> true);
+    public static List<String> get(String filename, int skip) {
+        return get(filename, skip, e -> e, p -> true);
     }
 
-    public static <T> List<T> get(String fileName, int skip, Function<String, T> conversion) {
-        return get(fileName, skip, conversion, p -> true);
+    public static <T> List<T> get(String filename, int skip, Function<String, T> conversion) {
+        return get(filename, skip, conversion, p -> true);
     }
 
-    public static <T> List<T> get(String fileName, int skip
+    public static <T> List<T> get(String filename, int skip
             , Function<String, T> conversion, Predicate<T> predicate) {
 
         // ResourceUtility classloader, try-catch with resources
         try {
             ClassLoader classLoader = ResourceUtility.class.getClassLoader();
-            File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());
-            System.out.println("\nFile \"" + fileName + "\" found : " + file.exists());
+            File file = new File(Objects.requireNonNull(classLoader.getResource(filename)).getFile());
+            System.out.println("\nFile \"" + filename + "\" found : " + file.exists());
 
             Path path = file.toPath();
 
