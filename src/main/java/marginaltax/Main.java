@@ -1,6 +1,6 @@
 package marginaltax;
 
-import marginaltax.service.MarginalTaxService;
+import marginaltax.businessobject.MarginalTaxService;
 import marginaltax.utility.FormatUtility;
 
 import java.util.Scanner;

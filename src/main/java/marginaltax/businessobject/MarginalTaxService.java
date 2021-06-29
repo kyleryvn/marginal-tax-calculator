@@ -1,4 +1,4 @@
-package marginaltax.service;
+package marginaltax.businessobject;
 
 import com.google.gson.Gson;
 import marginaltax.model.FederalTaxRule;
