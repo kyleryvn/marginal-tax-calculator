@@ -15,18 +15,18 @@ Changed language settings to 16 and no issues.
 
 ## Technologies
 
-* Java <a href="https://jdk.java.net/java-se-ri/14">14</a> or <a href="https://jdk.java.net/15/">15</a>
+* Java (at least Java 11)
 * Maven Dependencies:
     * <a href="https://github.com/google/gson">Google Gson</a> version 2.8.6
     * <a href="https://junit.org/junit5/">JUnit 5</a> version 5.3.1
 
 UPDATE: Known error with Google Gson
 * As of Java 15, Gson throws an Exception (AssertionError) when trying to write to a record.
-Replace record's with POJOs
+Replace with POJOs
 
 ## Setup
 
-* Add .jar file to your projects library
+* Add .jar file to your project's library
 
 ## Inspiration
 
