@@ -2,6 +2,7 @@ package marginaltax.service;
 
 import com.google.gson.Gson;
 import marginaltax.model.FederalTaxRule;
+import marginaltax.utility.ResourceStreamUtility;
 import marginaltax.utility.ResourceUtility;
 
 import java.util.List;
@@ -14,14 +15,13 @@ public class MarginalTaxService {
     static {
         Gson gson = new Gson();
         Function<String, FederalTaxRule> convert = json -> gson.fromJson(json, FederalTaxRule.class);
-        fedTaxRules = ResourceUtility.get("fedTaxRules.txt", 0, convert);
+        fedTaxRules = ResourceStreamUtility.getResource("fedTaxRules.txt", 0, convert);
     }
 
     public static float getTaxPaid(String status, float salary) {
         ToDoubleFunction<FederalTaxRule> map = e -> {
             float rangeTwo = e.salaryRange2() > salary ? salary : e.salaryRange2();
-            float taxPaid = (rangeTwo - e.salaryRange1()) * e.rate();
-            return taxPaid;
+            return (rangeTwo - e.salaryRange1()) * e.rate();
         };
 
         double taxPaid = fedTaxRules.stream()
