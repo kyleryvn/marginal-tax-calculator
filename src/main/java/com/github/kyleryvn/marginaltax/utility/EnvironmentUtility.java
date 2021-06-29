@@ -3,6 +3,10 @@ package com.github.kyleryvn.marginaltax.utility;
 import java.util.Map;
 import java.util.Set;
 
+/***
+ * Used to return the file directory pointed to by a specific system environment variable
+ */
+
 public class EnvironmentUtility {
     private static final Map<String, String> env = System.getenv();
 
