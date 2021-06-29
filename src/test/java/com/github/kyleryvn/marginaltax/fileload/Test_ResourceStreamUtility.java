@@ -1,4 +1,4 @@
-package com.github.kyleryvn.marginaltax;
+package com.github.kyleryvn.marginaltax.fileload;
 
 import com.github.kyleryvn.marginaltax.model.FederalTaxRule;
 import com.github.kyleryvn.marginaltax.utility.ResourceStreamUtility;
