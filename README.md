@@ -1,6 +1,6 @@
 # Marginal Tax Calculator
 
-Calculates tax due based on filing status and gross income
+Calculate taxes due based on filing status and gross income
 
 ## Table of contents
 
