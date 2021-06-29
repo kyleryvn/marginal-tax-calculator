@@ -24,8 +24,8 @@ public class MarginalTaxService {
         };
 
         double taxPaid = fedTaxRules.stream()
-                .filter(taxRule -> taxRule.status().equalsIgnoreCase(status))
-                .filter(taxRule -> salary > taxRule.salaryRange1())
+                .filter(taxRule -> taxRule.getStatus().equalsIgnoreCase(status))
+                .filter(taxRule -> salary > taxRule.getSalaryRange1())
                 .peek(System.out::println) // comment this line out to turn off FederalTaxRule brackets in output
                 .mapToDouble(map)
                 .sum();
