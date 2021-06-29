@@ -14,7 +14,7 @@ public class MarginalTaxService {
     static {
         Gson gson = new Gson();
         Function<String, FederalTaxRule> convert = json -> gson.fromJson(json, FederalTaxRule.class);
-        fedTaxRules = ResourceStreamUtility.getResource("fedTaxRules.txt", 0, convert);
+        fedTaxRules = ResourceStreamUtility.getResource("docs/fedTaxRules.txt", 0, convert);
     }
 
     public static float getTaxPaid(String status, float salary) {
