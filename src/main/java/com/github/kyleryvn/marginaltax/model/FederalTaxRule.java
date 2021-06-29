@@ -1,4 +1,4 @@
-package marginaltax.model;
+package com.github.kyleryvn.marginaltax.model;
 
 public class FederalTaxRule {
     private final float rate;

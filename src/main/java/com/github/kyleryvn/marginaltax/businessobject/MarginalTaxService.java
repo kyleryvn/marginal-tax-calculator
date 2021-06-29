@@ -1,8 +1,8 @@
-package marginaltax.businessobject;
+package com.github.kyleryvn.marginaltax.businessobject;
 
+import com.github.kyleryvn.marginaltax.model.FederalTaxRule;
 import com.google.gson.Gson;
-import marginaltax.model.FederalTaxRule;
-import marginaltax.utility.ResourceStreamUtility;
+import com.github.kyleryvn.marginaltax.utility.ResourceStreamUtility;
 
 import java.util.List;
 import java.util.function.Function;

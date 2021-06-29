@@ -1,4 +1,4 @@
-package marginaltax.utility;
+package com.github.kyleryvn.marginaltax.utility;
 
 import java.text.DecimalFormat;
 

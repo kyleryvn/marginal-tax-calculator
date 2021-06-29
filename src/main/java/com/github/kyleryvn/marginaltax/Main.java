@@ -1,11 +1,9 @@
-package marginaltax;
+package com.github.kyleryvn.marginaltax;
 
-import marginaltax.businessobject.MarginalTaxService;
-import marginaltax.utility.FormatUtility;
+import com.github.kyleryvn.marginaltax.businessobject.MarginalTaxService;
+import com.github.kyleryvn.marginaltax.utility.FormatUtility;
 
 import java.util.Scanner;
-
-import static marginaltax.utility.FormatUtility.*;
 
 public class Main {
     // Error message constants
@@ -50,13 +48,13 @@ public class Main {
         } while (!isValid);
 
         // Convert user-inputted fedSalary to type double for formatting
-        double convertedSalary = convertSalary(fedSalary);
+        double convertedSalary = FormatUtility.convertSalary(fedSalary);
 
         // Calculate taxes due and convert to type double for formatting
         double taxesDue = Double.parseDouble(Float.toString(MarginalTaxService.getTaxPaid(fedFilingStatus, fedSalary)));
 
         // Format user-input filing status
-        fedFilingStatus = convertFilingStatus(fedFilingStatus);
+        fedFilingStatus = FormatUtility.convertFilingStatus(fedFilingStatus);
 
         // Print results
         System.out.println("\nResults:\nGross Annual Salary : " + FormatUtility.customFormat("$###,###,###.00", convertedSalary) +

@@ -1,8 +1,8 @@
-package marginaltax;
+package com.github.kyleryvn.marginaltax;
 
+import com.github.kyleryvn.marginaltax.model.FederalTaxRule;
+import com.github.kyleryvn.marginaltax.utility.ResourceStreamUtility;
 import com.google.gson.Gson;
-import marginaltax.model.FederalTaxRule;
-import marginaltax.utility.ResourceStreamUtility;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
