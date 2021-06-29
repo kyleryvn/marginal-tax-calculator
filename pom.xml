@@ -44,6 +44,23 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Apache Derby (Local to machine, install from jars directory in project) -->
+        <dependency>
+            <groupId>local.derby</groupId>
+            <artifactId>lderby</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>local.derbytools</groupId>
+            <artifactId>local.derbytools</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>local.shared.derby</groupId>
+            <artifactId>shared.lderby</artifactId>
+            <version>1.0</version>
+        </dependency>
+
         <!-- Google Gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
