@@ -14,8 +14,7 @@ public class FormatUtility {
         */
 
         DecimalFormat myFormatter = new DecimalFormat(pattern);
-        String output = myFormatter.format(value);
-        return output;
+        return myFormatter.format(value);
     }
 
     public static double convertSalary(float number) {
