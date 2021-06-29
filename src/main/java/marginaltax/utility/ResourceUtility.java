@@ -11,6 +11,14 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * The getResource method is not working in the JAR file
+ * If we try to access a file that is inside a JAR,
+ * It throws NoSuchFileException (linux), InvalidPathException (Windows)
+ *
+ * Resource URL Sample: file:java-io.jar!/json/file1.json
+ */
+
 @Deprecated
 public class ResourceUtility {
 
