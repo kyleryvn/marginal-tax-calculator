@@ -8,20 +8,17 @@ import java.util.Set;
  */
 
 public class EnvironmentUtility {
-    private static final Map<String, String> env = System.getenv();
-
-    public EnvironmentUtility() {
-    }
+    private static final Map<String, String> environment = System.getenv();
 
     public static Set<String> keys() {
-        return env.keySet();
+        return environment.keySet();
     }
 
-    public static Map<String, String> getEnvironmentVariable() {
-        return env;
+    public static Map<String, String> getVariable() {
+        return environment;
     }
 
     public static String get(String key) {
-        return (String) env.getOrDefault(key, "/notFound");
+        return (String) environment.getOrDefault(key, "/notFound");
     }
 }
