@@ -8,6 +8,6 @@ public class StartApplicationTests {
 
     @Test
     void contextLoads() {
-        
+
     }
 }
