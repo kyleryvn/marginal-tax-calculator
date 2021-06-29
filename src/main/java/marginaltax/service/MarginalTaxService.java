@@ -19,9 +19,9 @@ public class MarginalTaxService {
     }
 
     public static float getTaxPaid(String status, float salary) {
-        ToDoubleFunction<FederalTaxRule> map = e -> {
-            float rangeTwo = e.salaryRange2() > salary ? salary : e.salaryRange2();
-            return (rangeTwo - e.salaryRange1()) * e.rate();
+        ToDoubleFunction<FederalTaxRule> map = taxRule -> {
+            float rangeTwo = taxRule.salaryRange2() > salary ? salary : taxRule.salaryRange2();
+            return (rangeTwo - taxRule.salaryRange1()) * taxRule.rate();
         };
 
         double taxPaid = fedTaxRules.stream()
