@@ -15,6 +15,7 @@ import java.util.stream.Stream;
  * The getResource method is not working in the JAR file
  * If we try to access a file that is inside a JAR,
  * It throws NoSuchFileException (linux), InvalidPathException (Windows)
+ * Still works from within the IDE
  *
  * Resource URL Sample: file:java-io.jar!/json/file1.json
  */
