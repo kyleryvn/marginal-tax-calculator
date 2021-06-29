@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=derby.jar -DgroupId=local.derby -DartifactId=lderby -Dversion=1.0 -Dpackaging=jar
