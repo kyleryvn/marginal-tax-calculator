@@ -3,7 +3,6 @@ package marginaltax.service;
 import com.google.gson.Gson;
 import marginaltax.model.FederalTaxRule;
 import marginaltax.utility.ResourceStreamUtility;
-import marginaltax.utility.ResourceUtility;
 
 import java.util.List;
 import java.util.function.Function;
@@ -25,8 +24,8 @@ public class MarginalTaxService {
         };
 
         double taxPaid = fedTaxRules.stream()
-                .filter(e -> e.status().equalsIgnoreCase(status))
-                .filter(e -> salary > e.salaryRange1())
+                .filter(taxRule -> taxRule.status().equalsIgnoreCase(status))
+                .filter(taxRule -> salary > taxRule.salaryRange1())
                 .peek(System.out::println) // comment this line out to turn off FederalTaxRule brackets in output
                 .mapToDouble(map)
                 .sum();
