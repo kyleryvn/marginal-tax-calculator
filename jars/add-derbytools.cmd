@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=derbytools.jar -DgroupId=local.derbytools -DartifactId=local.derbytools -Dversion=1.0 -Dpackaging=jar
