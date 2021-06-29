@@ -3,25 +3,26 @@ package com.github.kyleryvn.marginaltax.utility;
 import java.util.Map;
 import java.util.Set;
 
-public class EnvironmentUtility {
-    private static final Map<String, String> env = System.getenv();
+/***
+ * Used to return the file directory pointed to by a specific system environment variable
+ */
 
-    public EnvironmentUtility() {
-    }
+public class EnvironmentUtility {
+    private static final Map<String, String> environment = System.getenv();
 
     public static Set<String> keys() {
-        return env.keySet();
+        return environment.keySet();
     }
 
-    public static Map<String, String> getEnvironmentVariable() {
-        return env;
+    public static Map<String, String> getVariable() {
+        return environment;
     }
 
     public static String get(String key) {
-        return (String) env.getOrDefault(key, "/notFound");
+        return (String) environment.getOrDefault(key, "/notFound");
     }
 
     public static void main(String[] args) {
-        System.out.println(get("CST_4713_DATA"));
+        System.out.println(environment);
     }
 }
