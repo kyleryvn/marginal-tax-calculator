@@ -19,13 +19,13 @@ public class MarginalTaxService {
 
     public static float getTaxPaid(String status, float salary) {
         ToDoubleFunction<FederalTaxRule> map = taxRule -> {
-            float rangeTwo = taxRule.salaryRange2() > salary ? salary : taxRule.salaryRange2();
-            return (rangeTwo - taxRule.salaryRange1()) * taxRule.rate();
+            float rangeTwo = Math.min(taxRule.getSalaryRange2(), salary);
+            return (rangeTwo - taxRule.getSalaryRange1()) * taxRule.getRate();
         };
 
         double taxPaid = fedTaxRules.stream()
-                .filter(taxRule -> taxRule.status().equalsIgnoreCase(status))
-                .filter(taxRule -> salary > taxRule.salaryRange1())
+                .filter(taxRule -> taxRule.getStatus().equalsIgnoreCase(status))
+                .filter(taxRule -> salary > taxRule.getSalaryRange1())
                 .peek(System.out::println) // comment this line out to turn off FederalTaxRule brackets in output
                 .mapToDouble(map)
                 .sum();
