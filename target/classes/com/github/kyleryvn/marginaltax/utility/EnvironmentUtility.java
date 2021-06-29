@@ -21,8 +21,4 @@ public class EnvironmentUtility {
     public static String get(String key) {
         return (String) environment.getOrDefault(key, "/notFound");
     }
-
-    public static void main(String[] args) {
-        System.out.println(environment);
-    }
 }
